@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useAuth } from '../lib/auth-context';
+import { useAuth } from './auth-context';
 import { MapPin, Rocket, Loader2 } from 'lucide-react';
 import toast from 'react-hot-toast';
 

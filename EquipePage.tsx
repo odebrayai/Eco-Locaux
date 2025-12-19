@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import { supabase, Profile } from '../lib/supabase';
-import { useAuth } from '../lib/auth-context';
+import { supabase, Profile } from './supabase';
+import { useAuth } from './auth-context';
 import { Plus, X, Loader2, UserCheck, UserX } from 'lucide-react';
 import toast from 'react-hot-toast';
 

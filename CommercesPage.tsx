@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useAuth } from '../lib/auth-context';
+import { useAuth } from './auth-context';
 import {
   supabase,
   Commerce,
@@ -7,7 +7,7 @@ import {
   getCommerces,
   updateCommerce,
   deleteCommerce,
-} from '../lib/supabase';
+} from './supabase';
 import {
   Search,
   Download,

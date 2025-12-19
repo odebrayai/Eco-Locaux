@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { useAuth } from '../lib/auth-context';
-import { supabase } from '../lib/supabase';
+import { useAuth } from './auth-context';
+import { supabase } from './supabase';
 import { User, Save, Loader2 } from 'lucide-react';
 import toast from 'react-hot-toast';
 

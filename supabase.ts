@@ -120,8 +120,8 @@ export const getCommerce = async (id: string) => {
     .from('commerces')
     .select('*, commercial:profiles(id, nom, prenom, avatar_url)')
     .eq('id', id)
-    .single();
-  
+    .maybeSingle();
+
   if (error) throw error;
   return data as Commerce;
 };

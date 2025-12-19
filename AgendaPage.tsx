@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useAuth } from '../lib/auth-context';
+import { useAuth } from './auth-context';
 import {
   supabase,
   RDV,
@@ -8,7 +8,7 @@ import {
   createRDV,
   updateRDV,
   deleteRDV,
-} from '../lib/supabase';
+} from './supabase';
 import {
   Plus,
   X,
@@ -64,7 +64,7 @@ export default function AgendaPage() {
         supabase.from('commerces').select('id, nom, type_commerce').order('nom'),
       ]);
       setRdvs(rdvsData);
-      setCommerces(commercesData.data || []);
+      setCommerces(commercesData.data as Commerce[] || []);
     } catch (error) {
       console.error('Error loading data:', error);
       toast.error('Erreur lors du chargement');
@@ -200,7 +200,7 @@ export default function AgendaPage() {
         <div className="space-y-6">
           {Object.entries(rdvsByDate)
             .sort(([a], [b]) => new Date(a).getTime() - new Date(b).getTime())
-            .map(([date, dateRdvs]) => (
+            .map(([date, dateRdvs]: [string, RDV[]]) => (
               <div key={date} className="bg-[#1a1a25] rounded-xl border border-white/10 overflow-hidden">
                 <div className="bg-[#12121a] px-5 py-3 border-b border-white/10">
                   <h3 className="font-semibold text-white capitalize">{formatDate(date)}</h3>
@@ -298,9 +298,9 @@ function RdvModal({
   const [dateRdv, setDateRdv] = useState(rdv?.date_rdv || '');
   const [heure, setHeure] = useState(rdv?.heure || '09:00');
   const [duree, setDuree] = useState(rdv?.duree || 30);
-  const [typeRdv, setTypeRdv] = useState(rdv?.type_rdv || 'Prospection');
+  const [typeRdv, setTypeRdv] = useState<'Prospection' | 'Suivi' | 'Signature' | 'Autre'>(rdv?.type_rdv || 'Prospection');
   const [lieu, setLieu] = useState(rdv?.lieu || '');
-  const [statut, setStatut] = useState(rdv?.statut || 'En attente');
+  const [statut, setStatut] = useState<'En attente' | 'Confirmé' | 'Annulé' | 'Terminé'>(rdv?.statut || 'En attente');
   const [notes, setNotes] = useState(rdv?.notes || '');
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -391,7 +391,7 @@ function RdvModal({
               <label className="text-sm text-gray-400 mb-2 block">Type</label>
               <select
                 value={typeRdv}
-                onChange={(e) => setTypeRdv(e.target.value)}
+                onChange={(e) => setTypeRdv(e.target.value as 'Prospection' | 'Suivi' | 'Signature' | 'Autre')}
                 className="w-full px-4 py-3 bg-[#12121a] border border-white/10 rounded-xl text-white focus:outline-none focus:border-cyan-400"
               >
                 {TYPES_RDV.map((t) => (
@@ -418,7 +418,7 @@ function RdvModal({
             <label className="text-sm text-gray-400 mb-2 block">Statut</label>
             <select
               value={statut}
-              onChange={(e) => setStatut(e.target.value)}
+              onChange={(e) => setStatut(e.target.value as 'En attente' | 'Confirmé' | 'Annulé' | 'Terminé')}
               className="w-full px-4 py-3 bg-[#12121a] border border-white/10 rounded-xl text-white focus:outline-none focus:border-cyan-400"
             >
               {STATUTS_RDV.map((s) => (

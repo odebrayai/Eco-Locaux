@@ -1,13 +1,13 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
-import { AuthProvider, useAuth } from './lib/auth-context';
-import Layout from './components/Layout';
-import LoginPage from './pages/LoginPage';
-import SearchPage from './pages/SearchPage';
-import CommercesPage from './pages/CommercesPage';
-import AgendaPage from './pages/AgendaPage';
-import EquipePage from './pages/EquipePage';
-import ProfilePage from './pages/ProfilePage';
+import { AuthProvider, useAuth } from './auth-context';
+import Layout from './Layout';
+import LoginPage from './LoginPage';
+import SearchPage from './SearchPage';
+import CommercesPage from './CommercesPage';
+import AgendaPage from './AgendaPage';
+import EquipePage from './EquipePage';
+import ProfilePage from './ProfilePage';
 
 // Route protégée
 function ProtectedRoute({ children }: { children: React.ReactNode }) {
