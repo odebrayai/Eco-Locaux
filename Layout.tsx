@@ -111,13 +111,7 @@ export default function Layout({ children }: LayoutProps) {
           >
             <Menu className="w-6 h-6" />
           </button>
-          <Link to="/">
-            <img
-              src="/6obf1wetk0iahgcfkuyaa.png"
-              alt="ECO-LOCAUX"
-              className="h-8 w-auto"
-            />
-          </Link>
+          <div className="flex-1" />
           <div className="w-10" />
         </header>
 
