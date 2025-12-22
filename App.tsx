@@ -3,10 +3,14 @@ import { Toaster } from 'react-hot-toast';
 import { AuthProvider, useAuth } from './auth-context';
 import Layout from './Layout';
 import LoginPage from './LoginPage';
+import DashboardPage from './DashboardPage';
 import SearchPage from './SearchPage';
 import CommercesPage from './CommercesPage';
+import CommerceDetailPage from './CommerceDetailPage';
 import AgendaPage from './AgendaPage';
 import EquipePage from './EquipePage';
+import StatisticsPage from './StatisticsPage';
+import SettingsPage from './SettingsPage';
 
 function ProtectedRoute({ children }: { children: React.ReactNode }) {
   const { user, loading } = useAuth();
@@ -51,7 +55,18 @@ function AppRoutes() {
     <Routes>
       <Route
         path="/login"
-        element={user ? <Navigate to="/" replace /> : <LoginPage />}
+        element={user ? <Navigate to="/dashboard" replace /> : <LoginPage />}
+      />
+
+      <Route
+        path="/dashboard"
+        element={
+          <ProtectedRoute>
+            <Layout>
+              <DashboardPage />
+            </Layout>
+          </ProtectedRoute>
+        }
       />
 
       <Route
@@ -71,6 +86,17 @@ function AppRoutes() {
           <ProtectedRoute>
             <Layout>
               <CommercesPage />
+            </Layout>
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/commerces/:id"
+        element={
+          <ProtectedRoute>
+            <Layout>
+              <CommerceDetailPage />
             </Layout>
           </ProtectedRoute>
         }
@@ -100,7 +126,29 @@ function AppRoutes() {
         }
       />
 
-      <Route path="*" element={<Navigate to="/" replace />} />
+      <Route
+        path="/statistiques"
+        element={
+          <ProtectedRoute>
+            <Layout>
+              <StatisticsPage />
+            </Layout>
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/parametres"
+        element={
+          <ProtectedRoute>
+            <Layout>
+              <SettingsPage />
+            </Layout>
+          </ProtectedRoute>
+        }
+      />
+
+      <Route path="*" element={<Navigate to="/dashboard" replace />} />
     </Routes>
   );
 }

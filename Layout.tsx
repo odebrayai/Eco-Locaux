@@ -2,11 +2,13 @@ import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useAuth } from './auth-context';
 import {
+  Home,
   Search,
   Store,
   Calendar,
   Users,
-  User,
+  TrendingUp,
+  Settings,
   LogOut,
   Menu,
   X,
@@ -22,10 +24,13 @@ export default function Layout({ children }: LayoutProps) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const navigation = [
+    { name: 'Dashboard', href: '/dashboard', icon: Home },
     { name: 'Recherche', href: '/', icon: Search },
     { name: 'Commerces', href: '/commerces', icon: Store },
     { name: 'Agenda', href: '/agenda', icon: Calendar },
     ...(isAdmin ? [{ name: 'Équipe', href: '/equipe', icon: Users }] : []),
+    { name: 'Statistiques', href: '/statistiques', icon: TrendingUp },
+    { name: 'Paramètres', href: '/parametres', icon: Settings },
   ];
 
   const isActive = (path: string) => location.pathname === path;

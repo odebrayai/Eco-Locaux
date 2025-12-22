@@ -27,10 +27,14 @@ export interface Commerce {
   url_google_maps: string | null;
   note: number | null;
   nombre_avis: number | null;
+  panier_moyen: string | null;
   scoring_ia: number;
   statut: string;
   priorite: string;
   commercial_id: string | null;
   notes_internes: string | null;
+  facebook: string | null;
+  instagram: string | null;
+  linkedin: string | null;
   created_at: string;
 }
