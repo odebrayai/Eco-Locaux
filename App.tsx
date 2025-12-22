@@ -7,9 +7,7 @@ import SearchPage from './SearchPage';
 import CommercesPage from './CommercesPage';
 import AgendaPage from './AgendaPage';
 import EquipePage from './EquipePage';
-import ProfilePage from './ProfilePage';
 
-// Route protégée
 function ProtectedRoute({ children }: { children: React.ReactNode }) {
   const { user, loading } = useAuth();
 
@@ -28,7 +26,6 @@ function ProtectedRoute({ children }: { children: React.ReactNode }) {
   return <>{children}</>;
 }
 
-// Route admin uniquement
 function AdminRoute({ children }: { children: React.ReactNode }) {
   const { isAdmin, loading } = useAuth();
 
@@ -52,13 +49,11 @@ function AppRoutes() {
 
   return (
     <Routes>
-      {/* Route publique */}
       <Route
         path="/login"
         element={user ? <Navigate to="/" replace /> : <LoginPage />}
       />
 
-      {/* Routes protégées */}
       <Route
         path="/"
         element={
@@ -69,6 +64,7 @@ function AppRoutes() {
           </ProtectedRoute>
         }
       />
+
       <Route
         path="/commerces"
         element={
@@ -79,6 +75,7 @@ function AppRoutes() {
           </ProtectedRoute>
         }
       />
+
       <Route
         path="/agenda"
         element={
@@ -89,18 +86,7 @@ function AppRoutes() {
           </ProtectedRoute>
         }
       />
-      <Route
-        path="/profil"
-        element={
-          <ProtectedRoute>
-            <Layout>
-              <ProfilePage />
-            </Layout>
-          </ProtectedRoute>
-        }
-      />
 
-      {/* Route admin */}
       <Route
         path="/equipe"
         element={
@@ -114,7 +100,6 @@ function AppRoutes() {
         }
       />
 
-      {/* Fallback */}
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );
