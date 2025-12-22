@@ -37,7 +37,7 @@ const TYPES_COMMERCE = [
 
 const STATUTS = [
   { value: 'all', label: 'Tous les statuts', color: '' },
-  { value: 'À contacter', label: 'À contacter', color: 'bg-cyan-400/20 text-cyan-400' },
+  { value: 'À contacter', label: 'À contacter', color: 'bg-cyan-400/20 text-[#FF8C3A]' },
   { value: 'En cours', label: 'En cours', color: 'bg-yellow-400/20 text-yellow-400' },
   { value: 'RDV planifié', label: 'RDV planifié', color: 'bg-violet-400/20 text-violet-400' },
   { value: 'Converti', label: 'Converti', color: 'bg-green-400/20 text-green-400' },
@@ -191,7 +191,7 @@ export default function CommercesPage() {
           <h1 className="text-3xl font-bold text-white flex items-center gap-3">
             <span className="text-3xl">🏪</span>
             Mes Commerces
-            <span className="ml-2 px-3 py-1 bg-cyan-400/20 text-cyan-400 text-sm font-semibold rounded-full">
+            <span className="ml-2 px-3 py-1 bg-cyan-400/20 text-[#FF8C3A] text-sm font-semibold rounded-full">
               {commerces.length}
             </span>
           </h1>
@@ -216,7 +216,7 @@ export default function CommercesPage() {
               placeholder="Rechercher par nom, adresse..."
               value={searchText}
               onChange={(e) => setSearchText(e.target.value)}
-              className="w-full pl-10 pr-4 py-2.5 bg-[#12121a] border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-cyan-400 transition-all"
+              className="w-full pl-10 pr-4 py-2.5 bg-[#12121a] border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#FF8C3A] transition-all"
             />
           </div>
 
@@ -228,7 +228,7 @@ export default function CommercesPage() {
                 onClick={() => setFilterType(type.value)}
                 className={`flex items-center gap-1.5 px-3 py-2 rounded-lg whitespace-nowrap transition-all ${
                   filterType === type.value
-                    ? 'bg-cyan-400/20 text-cyan-400 border border-cyan-400/30'
+                    ? 'bg-cyan-400/20 text-[#FF8C3A] border border-[#FF8C3A]/30'
                     : 'bg-[#12121a] text-gray-400 border border-white/10 hover:border-white/20'
                 }`}
               >
@@ -242,7 +242,7 @@ export default function CommercesPage() {
           <select
             value={filterStatut}
             onChange={(e) => setFilterStatut(e.target.value)}
-            className="px-4 py-2.5 bg-[#12121a] border border-white/10 rounded-lg text-gray-300 focus:outline-none focus:border-cyan-400 transition-all"
+            className="px-4 py-2.5 bg-[#12121a] border border-white/10 rounded-lg text-gray-300 focus:outline-none focus:border-[#FF8C3A] transition-all"
           >
             {STATUTS.map((s) => (
               <option key={s.value} value={s.value}>
@@ -256,7 +256,7 @@ export default function CommercesPage() {
             <select
               value={filterCommercial}
               onChange={(e) => setFilterCommercial(e.target.value)}
-              className="px-4 py-2.5 bg-[#12121a] border border-white/10 rounded-lg text-gray-300 focus:outline-none focus:border-cyan-400 transition-all"
+              className="px-4 py-2.5 bg-[#12121a] border border-white/10 rounded-lg text-gray-300 focus:outline-none focus:border-[#FF8C3A] transition-all"
             >
               <option value="all">Tous les commerciaux</option>
               {commerciaux.map((c) => (
@@ -272,7 +272,7 @@ export default function CommercesPage() {
       {/* Liste des commerces */}
       {loading ? (
         <div className="flex items-center justify-center py-20">
-          <Loader2 className="w-8 h-8 text-cyan-400 animate-spin" />
+          <Loader2 className="w-8 h-8 text-[#FF8C3A] animate-spin" />
         </div>
       ) : commerces.length === 0 ? (
         <div className="text-center py-20">
@@ -286,7 +286,7 @@ export default function CommercesPage() {
             <div
               key={commerce.id}
               onClick={() => setSelectedCommerce(commerce)}
-              className="bg-[#1a1a25] rounded-xl border border-white/10 p-5 cursor-pointer hover:border-cyan-400/50 hover:shadow-[0_0_30px_rgba(0,240,255,0.1)] transition-all duration-300 group"
+              className="bg-[#1a1a25] rounded-xl border border-white/10 p-5 cursor-pointer hover:border-[#FF8C3A]/50 hover:shadow-[0_0_30px_rgba(255,140,58,0.1)] transition-all duration-300 group"
             >
               {/* Header */}
               <div className="flex items-start justify-between mb-3">
@@ -306,7 +306,7 @@ export default function CommercesPage() {
               </div>
 
               {/* Content */}
-              <h3 className="text-lg font-semibold text-white mb-1 truncate group-hover:text-cyan-400 transition-colors">
+              <h3 className="text-lg font-semibold text-white mb-1 truncate group-hover:text-[#FF8C3A] transition-colors">
                 {commerce.nom}
               </h3>
               <p className="text-sm text-gray-400 mb-3 line-clamp-2">{commerce.adresse}</p>
@@ -332,7 +332,7 @@ export default function CommercesPage() {
                       onClick={(e) => e.stopPropagation()}
                       className="p-2 hover:bg-white/10 rounded-lg transition-colors"
                     >
-                      <Phone className="w-4 h-4 text-gray-400 hover:text-cyan-400" />
+                      <Phone className="w-4 h-4 text-gray-400 hover:text-[#FF8C3A]" />
                     </a>
                   )}
                   {commerce.email && (
@@ -341,7 +341,7 @@ export default function CommercesPage() {
                       onClick={(e) => e.stopPropagation()}
                       className="p-2 hover:bg-white/10 rounded-lg transition-colors"
                     >
-                      <Mail className="w-4 h-4 text-gray-400 hover:text-cyan-400" />
+                      <Mail className="w-4 h-4 text-gray-400 hover:text-[#FF8C3A]" />
                     </a>
                   )}
                   {commerce.url_google_maps && (
@@ -352,7 +352,7 @@ export default function CommercesPage() {
                       onClick={(e) => e.stopPropagation()}
                       className="p-2 hover:bg-white/10 rounded-lg transition-colors"
                     >
-                      <MapPin className="w-4 h-4 text-gray-400 hover:text-cyan-400" />
+                      <MapPin className="w-4 h-4 text-gray-400 hover:text-[#FF8C3A]" />
                     </a>
                   )}
                   {commerce.site_web && (
@@ -363,7 +363,7 @@ export default function CommercesPage() {
                       onClick={(e) => e.stopPropagation()}
                       className="p-2 hover:bg-white/10 rounded-lg transition-colors"
                     >
-                      <Globe className="w-4 h-4 text-gray-400 hover:text-cyan-400" />
+                      <Globe className="w-4 h-4 text-gray-400 hover:text-[#FF8C3A]" />
                     </a>
                   )}
                 </div>
@@ -515,7 +515,7 @@ function CommerceModal({
                 <select
                   value={statut}
                   onChange={(e) => setStatut(e.target.value as Commerce['statut'])}
-                  className="w-full px-3 py-2 bg-[#12121a] border border-white/10 rounded-lg text-white focus:outline-none focus:border-cyan-400"
+                  className="w-full px-3 py-2 bg-[#12121a] border border-white/10 rounded-lg text-white focus:outline-none focus:border-[#FF8C3A]"
                 >
                   {STATUTS.filter((s) => s.value !== 'all').map((s) => (
                     <option key={s.value} value={s.value}>
@@ -531,7 +531,7 @@ function CommerceModal({
                 <select
                   value={priorite}
                   onChange={(e) => setPriorite(e.target.value as Commerce['priorite'])}
-                  className="w-full px-3 py-2 bg-[#12121a] border border-white/10 rounded-lg text-white focus:outline-none focus:border-cyan-400"
+                  className="w-full px-3 py-2 bg-[#12121a] border border-white/10 rounded-lg text-white focus:outline-none focus:border-[#FF8C3A]"
                 >
                   {PRIORITES.map((p) => (
                     <option key={p.value} value={p.value}>
@@ -548,7 +548,7 @@ function CommerceModal({
                   value={commercialId}
                   onChange={(e) => setCommercialId(e.target.value)}
                   disabled={!isAdmin}
-                  className="w-full px-3 py-2 bg-[#12121a] border border-white/10 rounded-lg text-white focus:outline-none focus:border-cyan-400 disabled:opacity-50"
+                  className="w-full px-3 py-2 bg-[#12121a] border border-white/10 rounded-lg text-white focus:outline-none focus:border-[#FF8C3A] disabled:opacity-50"
                 >
                   <option value="">Non assigné</option>
                   {commerciaux.map((c) => (
@@ -568,7 +568,7 @@ function CommerceModal({
                 onChange={(e) => setNotes(e.target.value)}
                 rows={3}
                 placeholder="Ajouter des notes..."
-                className="w-full px-3 py-2 bg-[#12121a] border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-cyan-400 resize-none"
+                className="w-full px-3 py-2 bg-[#12121a] border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#FF8C3A] resize-none"
               />
             </div>
           </div>
@@ -592,7 +592,7 @@ function CommerceModal({
             </button>
             <button
               onClick={handleSave}
-              className="px-6 py-2 bg-gradient-to-r from-cyan-400 to-violet-500 text-white font-semibold rounded-lg hover:opacity-90 transition-all"
+              className="px-6 py-2 bg-gradient-to-r from-[#547235] to-[#FF8C3A] text-white font-semibold rounded-lg hover:opacity-90 transition-all"
             >
               Sauvegarder
             </button>

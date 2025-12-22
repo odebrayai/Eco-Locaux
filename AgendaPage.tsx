@@ -131,7 +131,7 @@ export default function AgendaPage() {
         </h1>
         <button
           onClick={() => { setEditingRdv(null); setShowModal(true); }}
-          className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-cyan-400 to-violet-500 text-white font-semibold rounded-xl hover:opacity-90 transition-all shadow-[0_0_20px_rgba(0,240,255,0.3)]"
+          className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#547235] to-[#FF8C3A] text-white font-semibold rounded-xl hover:opacity-90 transition-all shadow-[0_0_20px_rgba(255,140,58,0.3)]"
         >
           <Plus className="w-5 h-5" />
           Nouveau RDV
@@ -164,7 +164,7 @@ export default function AgendaPage() {
           onClick={() => setFilterStatut('all')}
           className={`px-4 py-2 rounded-lg text-sm font-medium whitespace-nowrap transition-all ${
             filterStatut === 'all'
-              ? 'bg-cyan-400/20 text-cyan-400 border border-cyan-400/30'
+              ? 'bg-cyan-400/20 text-[#FF8C3A] border border-cyan-400/30'
               : 'bg-[#1a1a25] text-gray-400 border border-white/10 hover:border-white/20'
           }`}
         >
@@ -188,7 +188,7 @@ export default function AgendaPage() {
       {/* Liste des RDV */}
       {loading ? (
         <div className="flex items-center justify-center py-20">
-          <Loader2 className="w-8 h-8 text-cyan-400 animate-spin" />
+          <Loader2 className="w-8 h-8 text-[#FF8C3A] animate-spin" />
         </div>
       ) : rdvs.length === 0 ? (
         <div className="text-center py-20">
@@ -264,7 +264,7 @@ export default function AgendaPage() {
       {/* FAB */}
       <button
         onClick={() => { setEditingRdv(null); setShowModal(true); }}
-        className="fixed bottom-6 right-6 w-14 h-14 bg-gradient-to-r from-cyan-400 to-violet-500 rounded-full flex items-center justify-center text-white text-2xl shadow-[0_0_30px_rgba(0,240,255,0.4)] hover:scale-110 transition-transform lg:hidden"
+        className="fixed bottom-6 right-6 w-14 h-14 bg-gradient-to-r from-[#547235] to-[#FF8C3A] rounded-full flex items-center justify-center text-white text-2xl shadow-[0_0_30px_rgba(255,140,58,0.4)] hover:scale-110 transition-transform lg:hidden"
       >
         +
       </button>
@@ -341,7 +341,7 @@ function RdvModal({
               value={commerceId}
               onChange={(e) => setCommerceId(e.target.value)}
               required
-              className="w-full px-4 py-3 bg-[#12121a] border border-white/10 rounded-xl text-white focus:outline-none focus:border-cyan-400"
+              className="w-full px-4 py-3 bg-[#12121a] border border-white/10 rounded-xl text-white focus:outline-none focus:border-[#FF8C3A]"
             >
               <option value="">Sélectionner un commerce</option>
               {commerces.map((c) => (
@@ -359,7 +359,7 @@ function RdvModal({
                 value={dateRdv}
                 onChange={(e) => setDateRdv(e.target.value)}
                 required
-                className="w-full px-4 py-3 bg-[#12121a] border border-white/10 rounded-xl text-white focus:outline-none focus:border-cyan-400"
+                className="w-full px-4 py-3 bg-[#12121a] border border-white/10 rounded-xl text-white focus:outline-none focus:border-[#FF8C3A]"
               />
             </div>
             <div>
@@ -369,7 +369,7 @@ function RdvModal({
                 value={heure}
                 onChange={(e) => setHeure(e.target.value)}
                 required
-                className="w-full px-4 py-3 bg-[#12121a] border border-white/10 rounded-xl text-white focus:outline-none focus:border-cyan-400"
+                className="w-full px-4 py-3 bg-[#12121a] border border-white/10 rounded-xl text-white focus:outline-none focus:border-[#FF8C3A]"
               />
             </div>
           </div>
@@ -384,7 +384,7 @@ function RdvModal({
                 onChange={(e) => setDuree(parseInt(e.target.value))}
                 min="15"
                 step="15"
-                className="w-full px-4 py-3 bg-[#12121a] border border-white/10 rounded-xl text-white focus:outline-none focus:border-cyan-400"
+                className="w-full px-4 py-3 bg-[#12121a] border border-white/10 rounded-xl text-white focus:outline-none focus:border-[#FF8C3A]"
               />
             </div>
             <div>
@@ -392,7 +392,7 @@ function RdvModal({
               <select
                 value={typeRdv}
                 onChange={(e) => setTypeRdv(e.target.value as 'Prospection' | 'Suivi' | 'Signature' | 'Autre')}
-                className="w-full px-4 py-3 bg-[#12121a] border border-white/10 rounded-xl text-white focus:outline-none focus:border-cyan-400"
+                className="w-full px-4 py-3 bg-[#12121a] border border-white/10 rounded-xl text-white focus:outline-none focus:border-[#FF8C3A]"
               >
                 {TYPES_RDV.map((t) => (
                   <option key={t.value} value={t.value}>{t.label}</option>
@@ -409,7 +409,7 @@ function RdvModal({
               value={lieu}
               onChange={(e) => setLieu(e.target.value)}
               placeholder="Adresse ou lieu du RDV"
-              className="w-full px-4 py-3 bg-[#12121a] border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-cyan-400"
+              className="w-full px-4 py-3 bg-[#12121a] border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-[#FF8C3A]"
             />
           </div>
 
@@ -419,7 +419,7 @@ function RdvModal({
             <select
               value={statut}
               onChange={(e) => setStatut(e.target.value as 'En attente' | 'Confirmé' | 'Annulé' | 'Terminé')}
-              className="w-full px-4 py-3 bg-[#12121a] border border-white/10 rounded-xl text-white focus:outline-none focus:border-cyan-400"
+              className="w-full px-4 py-3 bg-[#12121a] border border-white/10 rounded-xl text-white focus:outline-none focus:border-[#FF8C3A]"
             >
               {STATUTS_RDV.map((s) => (
                 <option key={s.value} value={s.value}>{s.label}</option>
@@ -435,7 +435,7 @@ function RdvModal({
               onChange={(e) => setNotes(e.target.value)}
               rows={3}
               placeholder="Notes sur ce RDV..."
-              className="w-full px-4 py-3 bg-[#12121a] border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-cyan-400 resize-none"
+              className="w-full px-4 py-3 bg-[#12121a] border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-[#FF8C3A] resize-none"
             />
           </div>
 
@@ -450,7 +450,7 @@ function RdvModal({
             </button>
             <button
               type="submit"
-              className="flex-1 px-4 py-3 bg-gradient-to-r from-cyan-400 to-violet-500 text-white font-semibold rounded-xl hover:opacity-90 transition-all"
+              className="flex-1 px-4 py-3 bg-gradient-to-r from-[#547235] to-[#FF8C3A] text-white font-semibold rounded-xl hover:opacity-90 transition-all"
             >
               {rdv ? 'Sauvegarder' : 'Créer le RDV'}
             </button>

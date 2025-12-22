@@ -33,15 +33,15 @@ body {
 /* Custom utilities */
 @layer utilities {
   .text-gradient {
-    @apply bg-gradient-to-r from-cyan-400 to-violet-500 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-[#547235] to-[#FF8C3A] bg-clip-text text-transparent;
   }
-  
-  .glow-cyan {
-    box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
+
+  .glow-green {
+    box-shadow: 0 0 20px rgba(84, 114, 53, 0.3);
   }
-  
-  .glow-violet {
-    box-shadow: 0 0 20px rgba(124, 58, 237, 0.3);
+
+  .glow-orange {
+    box-shadow: 0 0 20px rgba(255, 140, 58, 0.3);
   }
 }
 

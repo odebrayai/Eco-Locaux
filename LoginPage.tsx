@@ -28,19 +28,18 @@ export default function LoginPage() {
     <div className="min-h-screen bg-[#0a0a0f] flex items-center justify-center p-4">
       {/* Background effects */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-violet-500/10 rounded-full blur-3xl" />
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#547235]/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#FF8C3A]/10 rounded-full blur-3xl" />
       </div>
 
       <div className="relative w-full max-w-md">
         {/* Logo */}
-        <div className="flex items-center justify-center gap-3 mb-8">
-          <div className="p-3 bg-gradient-to-br from-cyan-400 to-violet-500 rounded-2xl">
-            <Zap className="w-8 h-8 text-white" />
-          </div>
-          <h1 className="text-3xl font-bold bg-gradient-to-r from-cyan-400 to-violet-500 bg-clip-text text-transparent">
-            ProspectMap
-          </h1>
+        <div className="flex items-center justify-center mb-8">
+          <img
+            src="/6obf1wetk0iahgcfkuyaa.png"
+            alt="ECO-LOCAUX"
+            className="h-16 w-auto"
+          />
         </div>
 
         {/* Card */}
@@ -66,7 +65,7 @@ export default function LoginPage() {
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="vous@exemple.com"
                   required
-                  className="w-full pl-12 pr-4 py-3 bg-[#12121a] border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400/50 transition-all"
+                  className="w-full pl-12 pr-4 py-3 bg-[#12121a] border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-[#FF8C3A] focus:ring-1 focus:ring-[#FF8C3A]/50 transition-all"
                 />
               </div>
             </div>
@@ -84,7 +83,7 @@ export default function LoginPage() {
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="••••••••"
                   required
-                  className="w-full pl-12 pr-4 py-3 bg-[#12121a] border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400/50 transition-all"
+                  className="w-full pl-12 pr-4 py-3 bg-[#12121a] border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-[#FF8C3A] focus:ring-1 focus:ring-[#FF8C3A]/50 transition-all"
                 />
               </div>
             </div>
@@ -93,7 +92,7 @@ export default function LoginPage() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-4 bg-gradient-to-r from-cyan-400 to-violet-500 text-white font-semibold rounded-xl hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 disabled:opacity-50 disabled:cursor-not-allowed transition-all flex items-center justify-center gap-2 shadow-[0_0_30px_rgba(0,240,255,0.3)]"
+              className="w-full py-4 bg-gradient-to-r from-[#547235] to-[#FF8C3A] text-white font-semibold rounded-xl hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-[#FF8C3A]/50 disabled:opacity-50 disabled:cursor-not-allowed transition-all flex items-center justify-center gap-2 shadow-[0_0_30px_rgba(255,140,58,0.3)]"
             >
               {loading ? (
                 <>
@@ -109,7 +108,7 @@ export default function LoginPage() {
           {/* Forgot password */}
           <p className="mt-6 text-center text-sm text-gray-500">
             Mot de passe oublié ?{' '}
-            <button className="text-cyan-400 hover:underline">
+            <button className="text-[#FF8C3A] hover:underline">
               Réinitialiser
             </button>
           </p>
@@ -117,7 +116,7 @@ export default function LoginPage() {
 
         {/* Footer */}
         <p className="mt-8 text-center text-sm text-gray-600">
-          © 2025 ProspectMap • CRM de prospection commerciale
+          © 2025 ECO-LOCAUX • Solution de prospection énergétique
         </p>
       </div>
     </div>

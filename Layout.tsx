@@ -52,10 +52,11 @@ export default function Layout({ children }: LayoutProps) {
         {/* Logo */}
         <div className="flex items-center justify-between h-16 px-6 border-b border-white/5">
           <Link to="/" className="flex items-center gap-2">
-            <Zap className="w-6 h-6 text-cyan-400" />
-            <span className="text-xl font-bold bg-gradient-to-r from-cyan-400 to-violet-500 bg-clip-text text-transparent">
-              ProspectMap
-            </span>
+            <img
+              src="/6obf1wetk0iahgcfkuyaa.png"
+              alt="ECO-LOCAUX"
+              className="h-10 w-auto"
+            />
           </Link>
           <button
             onClick={() => setSidebarOpen(false)}
@@ -76,7 +77,7 @@ export default function Layout({ children }: LayoutProps) {
                 onClick={() => setSidebarOpen(false)}
                 className={`flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200 ${
                   isActive(item.href)
-                    ? 'bg-cyan-400/10 text-cyan-400 border border-cyan-400/30 shadow-[0_0_20px_rgba(0,240,255,0.15)]'
+                    ? 'bg-[#FF8C3A]/10 text-[#FF8C3A] border border-[#FF8C3A]/30 shadow-[0_0_20px_rgba(255,140,58,0.15)]'
                     : 'text-gray-400 hover:text-white hover:bg-white/5'
                 }`}
               >
@@ -94,7 +95,7 @@ export default function Layout({ children }: LayoutProps) {
               onClick={() => setProfileMenuOpen(!profileMenuOpen)}
               className="flex items-center gap-3 w-full px-4 py-3 rounded-xl hover:bg-white/5 transition-colors"
             >
-              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-cyan-400 to-violet-500 flex items-center justify-center text-white font-semibold">
+              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#547235] to-[#FF8C3A] flex items-center justify-center text-white font-semibold">
                 {profile?.prenom?.[0] || profile?.email?.[0]?.toUpperCase() || 'U'}
               </div>
               <div className="flex-1 text-left">
@@ -151,8 +152,11 @@ export default function Layout({ children }: LayoutProps) {
             <Menu className="w-6 h-6" />
           </button>
           <Link to="/" className="flex items-center gap-2">
-            <Zap className="w-5 h-5 text-cyan-400" />
-            <span className="font-bold text-white">ProspectMap</span>
+            <img
+              src="/6obf1wetk0iahgcfkuyaa.png"
+              alt="ECO-LOCAUX"
+              className="h-8 w-auto"
+            />
           </Link>
           <div className="w-10" /> {/* Spacer */}
         </header>

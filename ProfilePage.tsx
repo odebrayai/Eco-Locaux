@@ -34,7 +34,7 @@ export default function ProfilePage() {
     <div className="p-6 lg:p-8 max-w-2xl mx-auto">
       {/* Header */}
       <div className="text-center mb-10">
-        <div className="w-24 h-24 rounded-full bg-gradient-to-br from-cyan-400 to-violet-500 flex items-center justify-center text-white text-3xl font-bold mx-auto mb-4">
+        <div className="w-24 h-24 rounded-full bg-gradient-to-br from-[#547235] to-[#FF8C3A] flex items-center justify-center text-white text-3xl font-bold mx-auto mb-4">
           {prenom?.[0] || profile?.email?.[0]?.toUpperCase() || 'U'}
         </div>
         <h1 className="text-3xl font-bold text-white mb-2">Mon Profil</h1>
@@ -43,7 +43,7 @@ export default function ProfilePage() {
           className={`inline-block mt-2 px-3 py-1 rounded-full text-xs font-medium ${
             profile?.role === 'admin'
               ? 'bg-violet-400/20 text-violet-400'
-              : 'bg-cyan-400/20 text-cyan-400'
+              : 'bg-cyan-400/20 text-[#FF8C3A]'
           }`}
         >
           {profile?.role === 'admin' ? 'Administrateur' : 'Commercial'}
@@ -53,7 +53,7 @@ export default function ProfilePage() {
       {/* Form */}
       <form onSubmit={handleSave} className="bg-[#1a1a25] rounded-2xl border border-white/10 p-6 lg:p-8">
         <h2 className="text-lg font-semibold text-white mb-6 flex items-center gap-2">
-          <User className="w-5 h-5 text-cyan-400" />
+          <User className="w-5 h-5 text-[#FF8C3A]" />
           Informations personnelles
         </h2>
 
@@ -65,7 +65,7 @@ export default function ProfilePage() {
                 type="text"
                 value={prenom}
                 onChange={(e) => setPrenom(e.target.value)}
-                className="w-full px-4 py-3 bg-[#12121a] border border-white/10 rounded-xl text-white focus:outline-none focus:border-cyan-400 transition-all"
+                className="w-full px-4 py-3 bg-[#12121a] border border-white/10 rounded-xl text-white focus:outline-none focus:border-[#FF8C3A] transition-all"
               />
             </div>
             <div>
@@ -74,7 +74,7 @@ export default function ProfilePage() {
                 type="text"
                 value={nom}
                 onChange={(e) => setNom(e.target.value)}
-                className="w-full px-4 py-3 bg-[#12121a] border border-white/10 rounded-xl text-white focus:outline-none focus:border-cyan-400 transition-all"
+                className="w-full px-4 py-3 bg-[#12121a] border border-white/10 rounded-xl text-white focus:outline-none focus:border-[#FF8C3A] transition-all"
               />
             </div>
           </div>
@@ -97,7 +97,7 @@ export default function ProfilePage() {
               value={telephone}
               onChange={(e) => setTelephone(e.target.value)}
               placeholder="06 12 34 56 78"
-              className="w-full px-4 py-3 bg-[#12121a] border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-cyan-400 transition-all"
+              className="w-full px-4 py-3 bg-[#12121a] border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-[#FF8C3A] transition-all"
             />
           </div>
         </div>
@@ -105,7 +105,7 @@ export default function ProfilePage() {
         <button
           type="submit"
           disabled={saving}
-          className="w-full mt-8 py-4 bg-gradient-to-r from-cyan-400 to-violet-500 text-white font-semibold rounded-xl hover:opacity-90 disabled:opacity-50 transition-all flex items-center justify-center gap-2"
+          className="w-full mt-8 py-4 bg-gradient-to-r from-[#547235] to-[#FF8C3A] text-white font-semibold rounded-xl hover:opacity-90 disabled:opacity-50 transition-all flex items-center justify-center gap-2"
         >
           {saving ? (
             <>

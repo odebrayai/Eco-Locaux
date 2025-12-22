@@ -85,7 +85,7 @@ export default function SearchPage() {
           {/* Ville / Code Postal */}
           <div>
             <label className="flex items-center gap-2 text-sm font-medium text-gray-300 mb-3">
-              <MapPin className="w-4 h-4 text-cyan-400" />
+              <MapPin className="w-4 h-4 text-[#FF8C3A]" />
               Ville ou Code Postal
             </label>
             <input
@@ -93,14 +93,14 @@ export default function SearchPage() {
               value={ville}
               onChange={(e) => setVille(e.target.value)}
               placeholder="Ex: Paris, 75001, Lyon..."
-              className="w-full px-5 py-4 bg-[#12121a] border-2 border-white/10 rounded-xl text-white text-lg placeholder-gray-500 focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20 transition-all"
+              className="w-full px-5 py-4 bg-[#12121a] border-2 border-white/10 rounded-xl text-white text-lg placeholder-gray-500 focus:outline-none focus:border-[#FF8C3A] focus:ring-2 focus:ring-[#FF8C3A]/20 transition-all"
             />
           </div>
 
           {/* Type de commerce */}
           <div>
             <label className="flex items-center gap-2 text-sm font-medium text-gray-300 mb-3">
-              <span className="text-cyan-400">🏪</span>
+              <span className="text-[#FF8C3A]">🏪</span>
               Type de Commerce
             </label>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
@@ -111,7 +111,7 @@ export default function SearchPage() {
                   onClick={() => setTypeCommerce(type.value)}
                   className={`flex flex-col items-center gap-2 p-4 rounded-xl border-2 transition-all duration-200 ${
                     typeCommerce === type.value
-                      ? 'bg-cyan-400/10 border-cyan-400 text-cyan-400 shadow-[0_0_20px_rgba(0,240,255,0.2)]'
+                      ? 'bg-cyan-400/10 border-cyan-400 text-[#FF8C3A] shadow-[0_0_20px_rgba(0,240,255,0.2)]'
                       : 'bg-[#12121a] border-white/10 text-gray-400 hover:border-white/20 hover:bg-white/5'
                   }`}
                 >
@@ -126,10 +126,10 @@ export default function SearchPage() {
           <div>
             <label className="flex items-center justify-between text-sm font-medium text-gray-300 mb-3">
               <span className="flex items-center gap-2">
-                <span className="text-cyan-400">🔢</span>
+                <span className="text-[#FF8C3A]">🔢</span>
                 Nombre de commerces
               </span>
-              <span className="px-3 py-1 bg-gradient-to-r from-cyan-400 to-violet-500 text-white text-sm font-bold rounded-full">
+              <span className="px-3 py-1 bg-gradient-to-r from-[#547235] to-[#FF8C3A] text-white text-sm font-bold rounded-full">
                 {nombreResultats}
               </span>
             </label>
@@ -153,7 +153,7 @@ export default function SearchPage() {
           <button
             type="submit"
             disabled={loading || !ville || !typeCommerce}
-            className="w-full py-4 bg-gradient-to-r from-cyan-400 to-violet-500 text-white text-lg font-bold rounded-xl hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 disabled:opacity-50 disabled:cursor-not-allowed transition-all flex items-center justify-center gap-3 shadow-[0_0_30px_rgba(0,240,255,0.3)]"
+            className="w-full py-4 bg-gradient-to-r from-[#547235] to-[#FF8C3A] text-white text-lg font-bold rounded-xl hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-[#FF8C3A]/50 disabled:opacity-50 disabled:cursor-not-allowed transition-all flex items-center justify-center gap-3 shadow-[0_0_30px_rgba(255,140,58,0.3)]"
           >
             {loading ? (
               <>
@@ -175,17 +175,17 @@ export default function SearchPage() {
         <div className="bg-[#1a1a25] rounded-xl p-4 border border-white/5 text-center">
           <span className="text-2xl mb-2 block">⚡</span>
           <span className="text-xs text-gray-500 block">Analyse IA</span>
-          <span className="text-sm font-semibold text-cyan-400">Gemini</span>
+          <span className="text-sm font-semibold text-[#FF8C3A]">Gemini</span>
         </div>
         <div className="bg-[#1a1a25] rounded-xl p-4 border border-white/5 text-center">
           <span className="text-2xl mb-2 block">📊</span>
           <span className="text-xs text-gray-500 block">Source</span>
-          <span className="text-sm font-semibold text-cyan-400">Google Maps</span>
+          <span className="text-sm font-semibold text-[#FF8C3A]">Google Maps</span>
         </div>
         <div className="bg-[#1a1a25] rounded-xl p-4 border border-white/5 text-center">
           <span className="text-2xl mb-2 block">💾</span>
           <span className="text-xs text-gray-500 block">CRM</span>
-          <span className="text-sm font-semibold text-cyan-400">Supabase</span>
+          <span className="text-sm font-semibold text-[#FF8C3A]">Supabase</span>
         </div>
       </div>
 
@@ -196,10 +196,10 @@ export default function SearchPage() {
           appearance: none;
           width: 24px;
           height: 24px;
-          background: linear-gradient(135deg, #00f0ff 0%, #7c3aed 100%);
+          background: linear-gradient(135deg, #547235 0%, #FF8C3A 100%);
           border-radius: 50%;
           cursor: pointer;
-          box-shadow: 0 0 20px rgba(0, 240, 255, 0.5);
+          box-shadow: 0 0 20px rgba(255, 140, 58, 0.5);
           transition: transform 0.2s;
         }
         .slider-thumb::-webkit-slider-thumb:hover {
@@ -208,11 +208,11 @@ export default function SearchPage() {
         .slider-thumb::-moz-range-thumb {
           width: 24px;
           height: 24px;
-          background: linear-gradient(135deg, #00f0ff 0%, #7c3aed 100%);
+          background: linear-gradient(135deg, #547235 0%, #FF8C3A 100%);
           border-radius: 50%;
           cursor: pointer;
           border: none;
-          box-shadow: 0 0 20px rgba(0, 240, 255, 0.5);
+          box-shadow: 0 0 20px rgba(255, 140, 58, 0.5);
         }
       `}</style>
     </div>

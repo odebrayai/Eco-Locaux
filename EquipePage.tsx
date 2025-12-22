@@ -75,7 +75,7 @@ export default function EquipePage() {
         </h1>
         <button
           onClick={() => setShowModal(true)}
-          className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-cyan-400 to-violet-500 text-white font-semibold rounded-xl hover:opacity-90 transition-all"
+          className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#547235] to-[#FF8C3A] text-white font-semibold rounded-xl hover:opacity-90 transition-all"
         >
           <Plus className="w-5 h-5" />
           Ajouter un commercial
@@ -85,7 +85,7 @@ export default function EquipePage() {
       {/* Liste */}
       {loading ? (
         <div className="flex items-center justify-center py-20">
-          <Loader2 className="w-8 h-8 text-cyan-400 animate-spin" />
+          <Loader2 className="w-8 h-8 text-[#FF8C3A] animate-spin" />
         </div>
       ) : (
         <div className="bg-[#1a1a25] rounded-xl border border-white/10 overflow-hidden">
@@ -105,7 +105,7 @@ export default function EquipePage() {
                 <tr key={profile.id} className="border-b border-white/5 hover:bg-white/5">
                   <td className="px-6 py-4">
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-full bg-gradient-to-br from-cyan-400 to-violet-500 flex items-center justify-center text-white font-semibold">
+                      <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#547235] to-[#FF8C3A] flex items-center justify-center text-white font-semibold">
                         {profile.prenom?.[0] || profile.email[0].toUpperCase()}
                       </div>
                       <div>
@@ -123,7 +123,7 @@ export default function EquipePage() {
                       className={`px-3 py-1 rounded-full text-xs font-medium ${
                         profile.role === 'admin'
                           ? 'bg-violet-400/20 text-violet-400'
-                          : 'bg-cyan-400/20 text-cyan-400'
+                          : 'bg-cyan-400/20 text-[#FF8C3A]'
                       }`}
                     >
                       {profile.role === 'admin' ? 'Admin' : 'Commercial'}
@@ -211,7 +211,7 @@ function CreateUserModal({
                 value={prenom}
                 onChange={(e) => setPrenom(e.target.value)}
                 required
-                className="w-full px-4 py-3 bg-[#12121a] border border-white/10 rounded-xl text-white focus:outline-none focus:border-cyan-400"
+                className="w-full px-4 py-3 bg-[#12121a] border border-white/10 rounded-xl text-white focus:outline-none focus:border-[#FF8C3A]"
               />
             </div>
             <div>
@@ -221,7 +221,7 @@ function CreateUserModal({
                 value={nom}
                 onChange={(e) => setNom(e.target.value)}
                 required
-                className="w-full px-4 py-3 bg-[#12121a] border border-white/10 rounded-xl text-white focus:outline-none focus:border-cyan-400"
+                className="w-full px-4 py-3 bg-[#12121a] border border-white/10 rounded-xl text-white focus:outline-none focus:border-[#FF8C3A]"
               />
             </div>
           </div>
@@ -233,7 +233,7 @@ function CreateUserModal({
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
-              className="w-full px-4 py-3 bg-[#12121a] border border-white/10 rounded-xl text-white focus:outline-none focus:border-cyan-400"
+              className="w-full px-4 py-3 bg-[#12121a] border border-white/10 rounded-xl text-white focus:outline-none focus:border-[#FF8C3A]"
             />
           </div>
 
@@ -245,7 +245,7 @@ function CreateUserModal({
               onChange={(e) => setPassword(e.target.value)}
               required
               minLength={6}
-              className="w-full px-4 py-3 bg-[#12121a] border border-white/10 rounded-xl text-white focus:outline-none focus:border-cyan-400"
+              className="w-full px-4 py-3 bg-[#12121a] border border-white/10 rounded-xl text-white focus:outline-none focus:border-[#FF8C3A]"
             />
           </div>
 
@@ -254,7 +254,7 @@ function CreateUserModal({
             <select
               value={role}
               onChange={(e) => setRole(e.target.value)}
-              className="w-full px-4 py-3 bg-[#12121a] border border-white/10 rounded-xl text-white focus:outline-none focus:border-cyan-400"
+              className="w-full px-4 py-3 bg-[#12121a] border border-white/10 rounded-xl text-white focus:outline-none focus:border-[#FF8C3A]"
             >
               <option value="commercial">Commercial</option>
               <option value="admin">Admin</option>
@@ -272,7 +272,7 @@ function CreateUserModal({
             <button
               type="submit"
               disabled={loading}
-              className="flex-1 px-4 py-3 bg-gradient-to-r from-cyan-400 to-violet-500 text-white font-semibold rounded-xl hover:opacity-90 disabled:opacity-50 transition-all flex items-center justify-center gap-2"
+              className="flex-1 px-4 py-3 bg-gradient-to-r from-[#547235] to-[#FF8C3A] text-white font-semibold rounded-xl hover:opacity-90 disabled:opacity-50 transition-all flex items-center justify-center gap-2"
             >
               {loading && <Loader2 className="w-4 h-4 animate-spin" />}
               Créer
